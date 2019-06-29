@@ -35,9 +35,9 @@ class Server{
   Start(){
 
     //Build Get Requests
-    for(var Requests in this.GetRequests){
+    for(var Requests in this.GetRequests.Functions){
       //Fetch our req handler
-      let Req = this.GetRequests[Requests];
+      let Req = this.GetRequests.Functions[Requests];
 
       //Add the request
       EApp.get(Req.Path, Req.Funct);
@@ -50,12 +50,18 @@ class Server{
       let Req = this.PostRequests[Requests];
 
       //Add the request
-      EApp.get(Req.Path, Req.Funct);
+      //EApp.get(Req.Path, Req.Funct);
 
     }
 
 
-    
+    EApp.listen(this.HttpsServer.PORT, this.HttpsServer.IP, function(){
+      //Listening
+      console.log("[ -- Started -- ]");
+
+
+    });
+
 
 
   }
@@ -65,8 +71,16 @@ class Server{
 
 //Settings
 const Settings = {
-  "https"    : "127.0.0.1",
-  "Internal" : "127.0.0.1"
+
+  "https"    : {
+    "IP" : "127.0.0.1",
+    "PORT" : "80"
+  },
+  "Internal" : {
+    "IP" : "127.0.0.1",
+    "PORT" : "443"
+  }
+
 }
 
 //Creating

@@ -1,14 +1,22 @@
 class GetFunctions{
 
+  //Init class
   constructor(){
     //Create function object
     this.Functions = {
 
-      "test" : {
+      //For testing
+      "Test" : {
+        "Path" : "/GetTest/",
         "Funct" : function(Request, Response){
+
           console.log("Test");
-        },
-        "Path" : "/GetTest"
+
+          Response.end("OWO");
+
+        }
+
+
       }
 
     }//End of function object
@@ -16,7 +24,9 @@ class GetFunctions{
 
   }
 
+}
 
 
 
-modules.exports = GetFunctions;
+
+module.exports = GetFunctions;

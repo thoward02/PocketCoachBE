@@ -6,15 +6,17 @@ class PostFunctions{
 
       "test" : {
         "Funct" : function(){
-        console.log("Test");
-      },
+          console.log("Test");
+        },
       "Path" : "/PostTest"
 
-    }
+      }
 
-  }//End of function object
+    }//End of function object
+
+  }
+
 }
 
 
-
-modules.exports = PostFunctions;
+module.exports = PostFunctions;
