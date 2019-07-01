@@ -77,10 +77,10 @@ class LoginServer{
         }
         return ISTOKEN;
       }
-      let HasEmail    = function(Email){
+      let HasEmail    = function(Email, LDB){
         let HasE = false;
 
-        for(var items in LoginDB){
+        for(var items in LDB){
           if(Email == LoginDB[items].Email) HasE = true;
         }
 
@@ -111,12 +111,12 @@ class LoginServer{
       let Taken = false;
       let TakenString = "";
 
-      if(HasEmail(Email)){
+      if(HasEmail(Email, LoginDB)){
         Taken = true;
         TakenString += "Email has already been added.";
       }
 
-      if(HasUserName(UName)){
+      if(HasUserName(UName, LoginDB)){
         Taken = true;
         TakenString += "Email has already been added.";
       }
