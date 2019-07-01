@@ -124,23 +124,23 @@ class LoginServer{
 
       if(!Taken){
         //Construct a new token
-        let Token = CreateToken(256);
-  
+        let Token = CreateToken(32);
+
         while(isToken(Token, LoginDB)){
-          Token = CreateToken(256);
+          Token = CreateToken(32);
         }
 
         //// TODO: WRITE EMAIL VERF...
 
         //Write to json
-        this.LoginDB[Token] = {
+        LoginDB[Token] = {
           "Username"  : UName,
           "Password"  : Pass,
-          "Email" : Email
+          "Email" : Emailg
         }
 
         //Write to file
-        fs.writeFileSync("./Core/LoginServer/Data/UserData.json", JSON.stringify(LoginDB), null, "\t");
+        fs.writeFileSync("./Core/LoginServer/Data/UserData.json", JSON.stringify(LoginDB, null, 4));
 
         ReturnFlag.Success = true;
         ReturnFlag.Key     = Token;
