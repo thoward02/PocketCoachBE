@@ -1,10 +1,8 @@
 //Server.js
 
 //Include get and post functions
-const GetRequest = require("./Core/GetFunctions.js");
+const GetRequest  = require("./Core/GetFunctions.js");
 const PostRequest = require("./Core/PostFunctions.js");
-
-
 
 //Express libs
 const Express      = require("express");
@@ -14,6 +12,11 @@ const EApp         = Express();
 const BodyParse    = require('body-parser');
 EApp.use(BodyParse.json());
 EApp.use(BodyParse.urlencoded({ extended: true }));
+
+//Child processing // For running secondary login server
+const { spawn } = require('child_process');
+
+
 
 class Server{
 
@@ -27,12 +30,16 @@ class Server{
 
     this.HttpsServer  = Settings.https;
 
+    this.LoginServer  = null;
+
 
   }
 
 
   //Start
   Start(){
+    //Start login server data
+    this.StartLoginServer();
 
     //Build Get Requests
     for(var Requests in this.GetRequests.Functions){
@@ -45,12 +52,12 @@ class Server{
     }
 
     //Build Post requests
-    for(var Requests in this.PostRequests){
+    for(var Requests in this.PostRequests.Functions){
       //Fetch our req handler
-      let Req = this.PostRequests[Requests];
+      let Req = this.PostRequests.Functions[Requests];
 
       //Add the request
-      //EApp.get(Req.Path, Req.Funct);
+      EApp.post(Req.Path, Req.Funct);
 
     }
 
@@ -65,6 +72,26 @@ class Server{
 
 
   }
+
+  //Login Server
+  StartLoginServer(){
+    this.LoginServer = spawn("node", ["Core/LoginServer/Server.js"] );
+    this.LoginServer.stdout.on("data", (ServerData) => {
+      
+      console.log("[ -- LOGIN SERVER -- ]: "+ServerData);
+
+    });
+
+
+    this.LoginServer.stderr.on("data", (Err) => {
+
+      console.log("ERR IN LOGIN SERVER..." + Err);
+
+    });
+
+
+  }
+
 
 
 }

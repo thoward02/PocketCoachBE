@@ -7,7 +7,7 @@ class GetFunctions{
 
       //For testing
       "Test" : {
-        "Path" : "/GetTest/",
+        "Path" : "/GetTest",
         "Funct" : function(Request, Response){
 
           console.log("Test");
