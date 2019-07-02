@@ -3,7 +3,7 @@ Back end of Pocket Coach
 
 
 # API DOCS
-POST
+Here's some api documentation for the back end of PocketCoach. Most of the requests can be made through a http POST request and will return a JSON format. 
 ## User Info
 
 ### Sign Up
