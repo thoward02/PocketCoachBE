@@ -6,7 +6,7 @@
         "Path" : "/Api/Guides/Maps/MapTypes",
         "Hybrid"   : {
           "Path"   : "/Api/Guides/Maps/MapTypes/Hybrid",
-
+          "Maps"   : {
             "Blizzard_World" : "/Api/Guides/Maps/Blizzard_World",
             "Eichenwalde" : "/Api/Guides/Maps/Eichenwalde",
             "Hollywood" : "/Api/Guides/Maps/Hollywood",
