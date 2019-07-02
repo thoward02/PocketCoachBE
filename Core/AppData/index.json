@@ -1,7 +1,7 @@
 {
   "Guides" : {
     "Maps"  : {
-      "Path"     : "/Api/Gudies/Maps",
+      "Path"     : "/Api/Guides/Maps",
       "MapTypes" : {
 
         "Hybrid"   : {},
@@ -15,7 +15,7 @@
     },
 
     "Heroes"    : {
-      "Path" : "/Api/Gudies/Heroes",
+      "Path" : "/Api/Guides/Heroes",
       "HeroTypes" : {
         "Dps"     : {},
         "MainSupport" : {},
@@ -54,17 +54,23 @@
 
  "CoachingData" : {
     "CoachingRequests" : {
-      "PlayerRequests" : {},
-      "CoachRequests"  : {}
+      "Path" : "/Api/Coaching/Requests"
     },
 
-    "CoachingVods" : {}
+    "CoachingVods" : {
+      "Path" : "/Api/Coaching/Vods"
+    }
 
   },
 
   "OWLVods" : {
-    "RawVod" : {}
-    "CommentatedVod" : {}
+    "Path" : "/Api/OWL/",
+    "RawVod" : {
+      "Path" : "/Api/OWL/OwlVods"
+    },
+    "CommentatedVod" : {
+      "Path" : "/Api/OWL/CommentedOWLVod"
+    }
   }
 
 
