@@ -1,5 +1,4 @@
 {
-
   "Guides" : {
     "Maps"  : {
       "Path"     : "/Api/Gudies/Maps",
@@ -58,7 +57,7 @@
       "PlayerRequests" : {},
       "CoachRequests"  : {}
     },
-    
+
     "CoachingVods" : {}
 
   },
