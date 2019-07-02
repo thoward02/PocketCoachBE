@@ -6,7 +6,7 @@ Back end of Pocket Coach
 POST
 ### User Info
 `/Api/CreateUser`
-```
+```json
 Request = {
   "Username" : USERNAME,
   "Password" : PASSWORD,
@@ -28,7 +28,7 @@ or
 ```
 
 `/Api/Login`
-```
+```json
 
 Request = {
   "Email"    : EMAIL,
