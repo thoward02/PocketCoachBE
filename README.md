@@ -2,9 +2,9 @@
 Back end of Pocket Coach
 
 
-##API DOCS
+## API DOCS
 POST
-###User Info
+### User Info
 `/Api/CreateUser`
 ```
 Request = {
