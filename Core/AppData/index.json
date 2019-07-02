@@ -1,0 +1,74 @@
+{
+
+  "Guides" : {
+    "Maps"  : {
+      "Path"     : "/Api/Gudies/Maps",
+      "MapTypes" : {
+
+        "Hybrid"   : {},
+        "Payload"  : {},
+        "2CP"      : {},
+        "CP"       : {}
+
+      },
+      "MapList" : {}
+
+    },
+
+    "Heroes"    : {
+      "Path" : "/Api/Gudies/Heroes",
+      "HeroTypes" : {
+        "Dps"     : {},
+        "MainSupport" : {},
+        "OffSupport"  : {} ,
+        "MainTank"    : {},
+        "OffTank"     : {}
+      },
+      "HeroList"  : {}
+    },
+
+    "TeamComps" : {
+      "Path"      : "/Api/Guides/TeamComps/",
+      "Comps"     : {
+        "222"       : {},
+        "3-3"       : {},
+        "OffMeta"   : {}
+      }
+    }
+
+  },
+
+  "Quizzes" : {
+    "Easy"   : {
+      "Path" : "/Api/Quizzes/Easy/",
+      "Content" : {}
+    },
+    "Medium" : {
+      "Path" : "/Api/Quizzes/Medium/",
+      "Content" : {}
+    },
+    "Hard"   : {
+      "Path" : "/Api/Quizzes/Hard/",
+      "Content" : {}
+    }
+  },
+
+ "CoachingData" : {
+    "CoachingRequests" : {
+      "PlayerRequests" : {},
+      "CoachRequests"  : {}
+    },
+    
+    "CoachingVods" : {}
+
+  },
+
+  "OWLVods" : {
+    "RawVod" : {}
+    "CommentatedVod" : {}
+  }
+
+
+
+
+}
