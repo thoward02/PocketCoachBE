@@ -19,6 +19,8 @@ Back end of Pocket Coach
   }
   or
   {
-    Success : "false",
-    "Key"   : null
+    Success : false,
+    Key   : null,
+    Reason : string
+
   }
