@@ -10,7 +10,7 @@ class PostFunctions{
           //LIBS
           let fs = require("fs")
           //Import file
-          let FileData    = fs.readFileSync("./Core/LoginServer/Data/UserData.json");
+          let FileData    = fs.readFileSync("./Core/LoginData/UserData.json");
 
           //Write data to server
           let LoginDB     = JSON.parse(FileData);
@@ -168,6 +168,8 @@ class PostFunctions{
 
         } // END OF LOGIN
       }
+
+
 
 
     }//End of function object

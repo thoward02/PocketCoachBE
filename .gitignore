@@ -1,0 +1,10 @@
+node_modules/
+node.exe
+node_etw_provider.man
+node_perfctr_provider.man
+nodevars.bat
+npm
+npm.cmd
+npx
+npx.cmd
+CHANGELOG.md

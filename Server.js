@@ -13,9 +13,6 @@ const BodyParse    = require('body-parser');
 EApp.use(BodyParse.json());
 EApp.use(BodyParse.urlencoded({ extended: true }));
 
-//Child processing // For running secondary login server
-const { spawn } = require('child_process');
-
 
 
 class Server{
@@ -30,17 +27,12 @@ class Server{
 
     this.HttpsServer  = Settings.https;
 
-    this.LoginServer  = null;
-
 
   }
 
 
   //Start
   Start(){
-    //Start login server data
-    this.StartLoginServer();
-
     //Build Get Requests
     for(var Requests in this.GetRequests.Functions){
       //Fetch our req handler
@@ -69,25 +61,6 @@ class Server{
 
     });
 
-
-
-  }
-
-  //Login Server
-  StartLoginServer(){
-    this.LoginServer = spawn("node", ["Core/LoginServer/Server.js"] );
-    this.LoginServer.stdout.on("data", (ServerData) => {
-      
-      console.log("[ -- LOGIN SERVER -- ]: "+ServerData);
-
-    });
-
-
-    this.LoginServer.stderr.on("data", (Err) => {
-
-      console.log("ERR IN LOGIN SERVER..." + Err);
-
-    });
 
 
   }
