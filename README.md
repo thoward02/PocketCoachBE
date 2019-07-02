@@ -3,7 +3,7 @@ Back end of Pocket Coach
 
 
 # API DOCS
-Here's some api documentation for the back end of PocketCoach. Most of the requests can be made through a http POST request and will return a JSON format. 
+Here's some api documentation for the back end of PocketCoach. Most of the requests can be made through a http POST request and will return a JSON format.
 ## User Info
 
 ### Sign Up
@@ -63,3 +63,20 @@ and if it failed it will return a
 For the following Request requires `Key` which is the api key given to you upon successful login.
 
 ### Index
+You can index the entire back end request system by calling `/Api/Index`.
+It will return a JSON object holding every request you could make towards the back end system.
+
+The request would look like
+```json
+{
+  "Key" : "YOURKEY"
+}
+```
+
+and the return would be either an object of data or a failure tag:
+```json
+{
+  "Success" : false,
+  "Reason"  : "string"
+}
+```
