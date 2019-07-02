@@ -100,7 +100,7 @@ class PostFunctions{
             }
 
             //Write to file
-            fs.writeFileSync("./Core/LoginServer/Data/UserData.json", JSON.stringify(LoginDB, null, 4));
+            fs.writeFileSync("./Core/LoginServer/UserData.json", JSON.stringify(LoginDB, null, 4));
 
             ReturnFlag.Success = true;
             ReturnFlag.Key     = Token;
@@ -125,7 +125,7 @@ class PostFunctions{
           //LIBS
           let fs          = require("fs")
           //Import file
-          let FileData    = fs.readFileSync("./Core/LoginServer/Data/UserData.json");
+          let FileData    = fs.readFileSync("./Core/LoginData/UserData.json");
 
           //Setup vars
           let LoginDB     = JSON.parse(FileData)
@@ -173,9 +173,10 @@ class PostFunctions{
         "Path" : "/Api/Index",
         "Funct" : function(Request, Response){
           //First Verify token
+          let fs = require('fs');
           let CheckToken = function(Token){
             //Fetch file and its data
-            let FileData    = fs.readFileSync("./Core/LoginServer/Data/UserData.json");
+            let FileData    = fs.readFileSync("./Core/LoginData/UserData.json");
             let LoginDB     = JSON.parse(FileData);
 
             //Check if token exists
@@ -188,6 +189,8 @@ class PostFunctions{
 
           }
 
+          let Token = Request.body.Token;
+
           //Build return object
           let ReturnObject = {
             "Success" : null,
@@ -196,11 +199,8 @@ class PostFunctions{
 
           if( (Token != null)  && (CheckToken(Token)) ){
             //Token Validated, return token
-            let Index = json.parse(fs.readFileSync("./core/AppData/index.json"));
-            for(var items in Index){
-              console.log(items)
-            }
-
+            let Index = fs.readFileSync("./Core/AppData/index.json");
+            Response.end(Index);
           }else{
 
             ReturnObject.Reason  = "Token was not valid, double check request object.";
@@ -208,7 +208,7 @@ class PostFunctions{
 
             Response.end(JSON.stringify(ReturnObject));
           }
-
+          fs = null;
         }
 
 

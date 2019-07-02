@@ -1,0 +1,5 @@
+{"Blizzard_World" : "/Api/Guides/Maps/Blizzard_World",
+"Eichenwalde" : "/Api/Guides/Maps/Eichenwalde",
+"Hollywood" : "/Api/Guides/Maps/Hollywood",
+"King's_Row" : "/Api/Guides/Maps/King's_Row",
+"Numbani" : "/Api/Guides/Maps/Numbani"}

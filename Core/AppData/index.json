@@ -3,21 +3,83 @@
     "Maps"  : {
       "Path"     : "/Api/Guides/Maps",
       "MapTypes" : {
+        "Path" : "/Api/Guides/Maps/MapTypes",
+        "Hybrid"   : {
+          "Path"   : "/Api/Guides/Maps/MapTypes/Hybrid",
 
-        "Hybrid"   : {},
-        "Payload"  : {},
-        "2CP"      : {},
-        "CP"       : {}
+            "Blizzard_World" : "/Api/Guides/Maps/Blizzard_World",
+            "Eichenwalde" : "/Api/Guides/Maps/Eichenwalde",
+            "Hollywood" : "/Api/Guides/Maps/Hollywood",
+            "King's_Row" : "/Api/Guides/Maps/King's_Row",
+            "Numbani" : "/Api/Guides/Maps/Numbani"
+          }
+        },
+        "Payload"  : {
+          "Path"   : "/Api/Guides/Maps/MapTypes/Payload",
+          "Maps"   : {
+            "Dorado" : "/Api/Guides/Maps/Dorado",
+            "Havana" : "/Api/Guides/Maps/Havana",
+            "Junkertown" : "/Api/Guides/Maps/Junkertown",
+            "Rialto" : "/Api/Guides/Maps/Rialto",
+            "Route_66" : "/Api/Guides/Maps/Route_66",
+            "Watchpoint_Gibraltar" : "/Api/Guides/Maps/Watchpoint_Gibraltar"
+          }
+
+        },
+        "2CP"      : {
+          "Path"   : "/Api/Guides/Maps/MapTypes/2CP",
+          "Maps" : {
+            "Horizon_Lunar_Colony" : "/Api/Guides/Maps/Horizon_Lunar_Colony",
+            "Paris" : "/Api/Guides/Maps/Paris",
+            "Temple_of_Anubis" : "/Api/Guides/Maps/Temple_of_Anubis",
+            "Volskaya_Industries" : "/Api/Guides/Maps/Volskaya_Industries"
+          }
+        },
+        "CP"       : {
+          "Path"   : "/Api/Guides/Maps/MapTypes/CP",
+          "Maps" : {
+            "Busan" : "/Api/Guides/Maps/Busan",
+            "Ilios" : "/Api/Guides/Maps/Ilios",
+            "Lijiang_Tower" : "/Api/Guides/Maps/Lijiang_Tower",
+            "Nepal" : "/Api/Guides/Maps/Nepal",
+            "Oasis" : "/Api/Guides/Maps/Oasis"
+          }
+
+        }
 
       },
-      "MapList" : {}
+      "MapList" : {
+        "Path" : "/Api/Guides/Maps/",
+        "Maps" :  {
+          "Blizzard_World" : "/Api/Guides/Maps/Blizzard_World",
+          "Eichenwalde" : "/Api/Guides/Maps/Eichenwalde",
+          "Hollywood" : "/Api/Guides/Maps/Hollywood",
+          "King's_Row" : "/Api/Guides/Maps/King's_Row",
+          "Numbani" : "/Api/Guides/Maps/Numbani",
+          "Dorado" : "/Api/Guides/Maps/Dorado",
+          "Havana" : "/Api/Guides/Maps/Havana",
+          "Junkertown" : "/Api/Guides/Maps/Junkertown",
+          "Rialto" : "/Api/Guides/Maps/Rialto",
+          "Route_66" : "/Api/Guides/Maps/Route_66",
+          "Watchpoint_Gibraltar" : "/Api/Guides/Maps/Watchpoint_Gibraltar",
+          "Horizon_Lunar_Colony" : "/Api/Guides/Maps/Horizon_Lunar_Colony",
+          "Paris" : "/Api/Guides/Maps/Paris",
+          "Temple_of_Anubis" : "/Api/Guides/Maps/Temple_of_Anubis",
+          "Volskaya_Industries" : "/Api/Guides/Maps/Volskaya_Industries",
+          "Busan" : "/Api/Guides/Maps/Busan",
+          "Ilios" : "/Api/Guides/Maps/Ilios",
+          "Lijiang_Tower" : "/Api/Guides/Maps/Lijiang_Tower",
+          "Nepal" : "/Api/Guides/Maps/Nepal",
+          "Oasis" : "/Api/Guides/Maps/Oasis"
+        }
+      }
 
     },
 
     "Heroes"    : {
       "Path" : "/Api/Guides/Heroes",
       "HeroTypes" : {
-        "Dps"     : {},
+        "Dps"         : {},
         "MainSupport" : {},
         "OffSupport"  : {} ,
         "MainTank"    : {},
