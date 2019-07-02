@@ -166,8 +166,53 @@ class PostFunctions{
 
           }
 
-        } // END OF LOGIN
-      }
+        }
+      },// END OF LOGIN
+      "Index" : {
+
+        "Path" : "/Api/Index",
+        "Funct" : function(Request, Response){
+          //First Verify token
+          let CheckToken = function(Token){
+            //Fetch file and its data
+            let FileData    = fs.readFileSync("./Core/LoginServer/Data/UserData.json");
+            let LoginDB     = JSON.parse(FileData);
+
+            //Check if token exists
+            let TokenE = false;
+            for(var items in LoginDB){
+              if(items == Token) TokenE = true;
+            }
+
+            return TokenE;
+
+          }
+
+          //Build return object
+          let ReturnObject = {
+            "Success" : null,
+            "Reason"  : null
+          }
+
+          if( (Token != null)  && (CheckToken(Token)) ){
+            //Token Validated, return token
+            let Index = json.parse(fs.readFileSync("./core/AppData/index.json"));
+            for(var items in Index){
+              console.log(items)
+            }
+
+          }else{
+
+            ReturnObject.Reason  = "Token was not valid, double check request object.";
+            ReturnObject.Success = false;
+
+            Response.end(JSON.stringify(ReturnObject));
+          }
+
+        }
+
+
+      } //End of indexx
 
 
 
