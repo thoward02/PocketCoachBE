@@ -93,7 +93,7 @@ if the incorrect map type was entered.
 
 ### Guides - Maps
 Making a get request to `/Api/Guides/Maps/MAP` where `MAP` is your map, will return the guide data on that particular map in a json format.
-**MAPLIST**
+**\nMAPLIST**
 * Hanamura
 * Horizon_Lunar_Colony
 * Paris
