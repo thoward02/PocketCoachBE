@@ -7,7 +7,7 @@ class GetFunctions{
 
       //For testing
       "MapGuides" : {
-        "Path" : "/Api/Guides/Maps/:Map",
+        "Path"  : "/Api/Guides/Maps/:Map",
         "Funct" : function(Request, Response){
           //Setup var
           let fs  = require("fs");
@@ -21,7 +21,7 @@ class GetFunctions{
 
           //If user inputted right map, find map data
           if(HasMap){
-            let MapData = fs.readFileSync("./Core/AppData/Guides/Maps/MapData/" + Map + ".json");
+            let MapData = fs.readFileSync("./Core/AppData/Guides/Maps/MapData/RawMapData/" + Map + ".json");
 
             fs = null;
 
@@ -38,9 +38,40 @@ class GetFunctions{
 
 
         }
+      },
+      "MapTypes" : {
+        "Path"  : "/Api/Guides/MapTypes/:MapType",
+        "Funct" : function(Request, Response){
+          //Setup var
+          let fs  = require("fs");
+          let Map = Request.params.Map;
+          let MapModes = ["Hybrid", "2CP", "Payload", "CP"];
+          let HasMapMode  = false;
 
+          for(var items in MapMode){
+            if(MapMode[items]  ==  Map) HasMapMode = true
+          }
 
+          //If user inputted right map, find map data
+          if(HasMapMode){
+            let MapData = fs.readFileSync("./Core/AppData/Guides/Maps/MapData/RawMapData/" + Map + ".json");
+
+            fs = null;
+
+            Response.end(MapData);
+          }
+          //If the map input isn't right
+          else{
+            fs = null;
+            Response.end(JSON.stringify({
+              "Success" : false,
+              "Reason"  : "No map found"
+            }));
+          }
+
+        }
       }
+
 
     }//End of function object
 
