@@ -10,7 +10,7 @@
             "Blizzard_World" : "/Api/Guides/Maps/Blizzard_World",
             "Eichenwalde" : "/Api/Guides/Maps/Eichenwalde",
             "Hollywood" : "/Api/Guides/Maps/Hollywood",
-            "King's_Row" : "/Api/Guides/Maps/King's_Row",
+            "Kings_Row" : "/Api/Guides/Maps/Kings_Row",
             "Numbani" : "/Api/Guides/Maps/Numbani"
           }
         },
@@ -54,7 +54,7 @@
           "Blizzard_World" : "/Api/Guides/Maps/Blizzard_World",
           "Eichenwalde" : "/Api/Guides/Maps/Eichenwalde",
           "Hollywood" : "/Api/Guides/Maps/Hollywood",
-          "King's_Row" : "/Api/Guides/Maps/King's_Row",
+          "Kings_Row" : "/Api/Guides/Maps/Kings_Row",
           "Numbani" : "/Api/Guides/Maps/Numbani",
           "Dorado" : "/Api/Guides/Maps/Dorado",
           "Havana" : "/Api/Guides/Maps/Havana",

@@ -3,11 +3,11 @@ Back end of Pocket Coach
 
 
 # API DOCS
-Here's some api documentation for the back end of PocketCoach. Most of the requests can be made through a http POST request and will return a JSON format.
+Here's some api documentation for the back end of PocketCoach. Most of the requests can be made through a http `POST` request and will return a JSON format.
 ## User Info
 
 ### Sign Up
-To create a new user make a POST request to  `/Api/CreateUser`, containing the following request.
+To create a new user make a `POST` request to  `/Api/CreateUser`, containing the following request.
 ```json
 "Request" = {
   "Username" : "USERNAME",
@@ -33,7 +33,7 @@ if creating the new user succeeded or a
 If creating the new user failed
 
 ### Login
-To login make a POST request to `/Api/Login`, containing the following request
+To login make a `POST` request to `/Api/Login`, containing the following request
 ```json
 Request = {
   "Email"    : "EMAIL",
@@ -57,13 +57,13 @@ and if it failed it will return a
 }
 ```
 
-## App Requests
+# App Requests
 
 #### NOTE
-For the following Request requires `Key` which is the api key given to you upon successful login.
+Some of the following requests will require a key
 
 ### Index
-You can index the entire back end request system by calling `/Api/Index`.
+You can index the entire back end request system by making a `GET` request to `/Api/Index`.
 It will return a JSON object holding every request you could make towards the back end system.
 
 The request would look like
@@ -80,3 +80,16 @@ and the return would be either an object of data or a failure tag:
   "Reason"  : "string"
 }
 ```
+
+### Guides - MapTypes
+Making a get request to `/Api/Guides/MapTypes/MAPTYPE`, where `MAPTYPE` is your map type `(Hybrid, 2CP, Payload, CP)`, will return the guide data on that particular map type in a json format.
+
+The request could return
+```json
+"Success" : false,
+"Reason"  : "No map type found"
+```
+if the incorrect map type was entered.
+
+### Guides - Maps
+Making a get request to `/Api/Guides/Maps/MAP` where `MAP` is your map `(Hanamura, Horizon_Lunar_Colony, Paris, Temple_of_Anubis, Volskaya_Industries, Dorado, Junkertown, Rialto, Route_66, Watchpoint_Gibraltar, Blizzard_World, Eichenwalde, Hollywood, King's_Row, Numbani, Busan, Ilios, Lijiang_Tower, Nepal, Oasis)`, will return the guide data on that particular map in a json format.
