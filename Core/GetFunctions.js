@@ -54,6 +54,45 @@ class GetFunctions{
 
       }, //End of indexx
 
+      /******************************************
+      *
+      * MAP DATA
+      *
+      ******************************************/
+
+
+      //Returns all of the Mapping data
+      "MapData" : {
+        "Path" : "/Api/Guides/Maps/",
+        "Funct" : function(Request, Response){
+          let ResponseData = {
+            "MapTypes" : "/Api/Guides/Maps/MapTypes",
+            "Maps" : "/Api/Guides/Maps/",
+            "MapList" : "/Api/Guides/ListMaps/",
+            "TypeList" : "/Api/Guides/ListMapTypes/"
+          }
+
+
+          Response.end(JSON.stringify(ResponseData));
+        }
+      },
+
+      //Lists maps
+      "MapList" : {
+        "Path" : "/Api/Guides/ListMaps/",
+        "Funct" : function(Request, Response){
+          Response.end("['Hanamura','Horizon_Lunar_Colony','Paris','Temple_of_Anubis','Volskaya_Industries','Dorado','Junkertown','Rialto','Route_66','Watchpoint_Gibraltar','Blizzard_World','Eichenwalde','Hollywood','Kings_Row','Numbani','Busan','Ilios','Lijiang_Tower','Nepal','Oasis']");
+
+        }
+      },
+
+      //Lists map types
+      "MapTypeList" : {
+        "Path" : "/Api/Guides/ListMapTypes/",
+        "Funct" : function(Request, Response){
+          Response.end("['Hybrid', '2CP', 'Payload', 'CP']");
+        }
+      },
 
       //Returns Guides on each map
       "MapGuides" : {
@@ -62,7 +101,7 @@ class GetFunctions{
           //Setup var
           let fs  = require("fs");
           let Map = Request.params.Map;
-          let MapPool = ["Hanamura","Horizon_Lunar_Colony","Paris","Temple_of_Anubis","Volskaya_Industries","Dorado","Junkertown","Rialto","Route_66","Watchpoint_Gibraltar","Blizzard_World","Eichenwalde","Hollywood","King's_Row","Numbani","Busan","Ilios","Lijiang_Tower","Nepal","Oasis"];
+          let MapPool = ["Hanamura","Horizon_Lunar_Colony","Paris","Temple_of_Anubis","Volskaya_Industries","Dorado","Junkertown","Rialto","Route_66","Watchpoint_Gibraltar","Blizzard_World","Eichenwalde","Hollywood","Kings_Row","Numbani","Busan","Ilios","Lijiang_Tower","Nepal","Oasis"];
           let HasMap  = false;
 
           for(var items in MapPool){
