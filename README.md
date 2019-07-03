@@ -92,4 +92,25 @@ The request could return
 if the incorrect map type was entered.
 
 ### Guides - Maps
-Making a get request to `/Api/Guides/Maps/MAP` where `MAP` is your map `(Hanamura, Horizon_Lunar_Colony, Paris, Temple_of_Anubis, Volskaya_Industries, Dorado, Junkertown, Rialto, Route_66, Watchpoint_Gibraltar, Blizzard_World, Eichenwalde, Hollywood, King's_Row, Numbani, Busan, Ilios, Lijiang_Tower, Nepal, Oasis)`, will return the guide data on that particular map in a json format.
+Making a get request to `/Api/Guides/Maps/MAP` where `MAP` is your map, will return the guide data on that particular map in a json format.
+- MAPLIST
+* Hanamura
+* Horizon_Lunar_Colony
+* Paris
+* Temple_of_Anubis
+* Volskaya_Industries
+* Dorado
+* Junkertown
+* Rialto
+* Route_66
+* Watchpoint_Gibraltar
+* Blizzard_World
+* Eichenwalde
+* Hollywood
+* King's_Row
+* Numbani
+* Busan
+* Ilios
+* Lijiang_Tower
+* Nepal
+* Oasis
